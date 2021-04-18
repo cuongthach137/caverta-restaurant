@@ -392,14 +392,10 @@ label {
 }
 
 .top {
-  background-image: url(slider-2.jpg);
   position: relative;
-  width: 100%;
+  overflow: hidden;
   height: 100vh;
-  margin: 0 auto;
-  -webkit-animation: slider 20s ease-in infinite;
-          animation: slider 20s ease-in infinite;
-  background-position: center;
+  width: 100%;
 }
 
 .top .top-bg-overlay {
@@ -407,12 +403,25 @@ label {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
-.top .top-content {
+.top .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.top .slide .top-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 11;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -427,7 +436,7 @@ label {
   top: 280px;
 }
 
-.top .top-content .caverta-type {
+.top .slide .top-content .caverta-type {
   font-weight: 550;
   font-size: 16px;
   line-height: 24px;
@@ -435,7 +444,7 @@ label {
   text-transform: uppercase;
 }
 
-.top .top-content .caverta {
+.top .slide .top-content .caverta {
   font-family: 'lora', sans-serif;
   font-weight: 400;
   font-size: 54px;
@@ -444,7 +453,7 @@ label {
   letter-spacing: 2px;
 }
 
-.top .top-content .caverta-desc {
+.top .slide .top-content .caverta-desc {
   width: 70%;
   margin: 0 auto;
   line-height: 24px;
@@ -452,7 +461,7 @@ label {
   font-size: 16px;
 }
 
-.top .top-content .caverta-contactus {
+.top .slide .top-content .caverta-contactus {
   letter-spacing: 2px;
   height: 22px;
   color: white;
@@ -464,38 +473,53 @@ label {
   transition: 500ms;
 }
 
-.top .top-content .caverta-contactus:hover {
+.top .slide .top-content .caverta-contactus:hover {
   color: var(--light-blue);
 }
 
-@-webkit-keyframes slider {
-  0%, 100% {
-    background-image: url(slider-2.jpg);
-  }
-  25% {
-    background-image: url(slider-3.jpg);
-  }
-  50% {
-    background-image: url(reservation-page.jpg);
-  }
-  75% {
-    background-image: url(slider-2.jpg);
-  }
+.slide.current {
+  opacity: 1;
 }
 
-@keyframes slider {
-  0%, 100% {
-    background-image: url(slider-2.jpg);
-  }
-  25% {
-    background-image: url(slider-3.jpg);
-  }
-  50% {
-    background-image: url(reservation-page.jpg);
-  }
-  75% {
-    background-image: url(slider-2.jpg);
-  }
+.buttons button#next {
+  position: absolute;
+  top: 40%;
+  right: 15px;
+}
+
+.buttons button#prev {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+}
+
+.buttons button {
+  z-index: 11;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Backgorund Images */
+.slideOne {
+  background: url("slider-2.jpg") no-repeat center top/cover;
+}
+
+.slideTwo {
+  background: url("slider-3.jpg") no-repeat center top/cover;
+}
+
+.slideThree {
+  background: url("reservation-page.jpg") no-repeat center top/cover;
 }
 
 .mid-container {
