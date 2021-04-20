@@ -32,6 +32,24 @@ body {
   min-height: 100vh;
 }
 
+.nav-bar-main.fixed {
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  background-color: var(--main-dark);
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
 .nav-bar-main {
   z-index: 100;
   display: -webkit-box;
@@ -44,8 +62,8 @@ body {
           align-items: center;
   width: 100%;
   height: 70px;
-  background-color: #252525;
   position: fixed;
+  background-color: transparent;
 }
 
 .nav-bar-main .btn-desktop {
@@ -160,7 +178,7 @@ body {
 
 .nav-bar-main .nav-bar-mobile-open {
   z-index: 100;
-  width: 50px;
+  width: 75px;
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -179,17 +197,9 @@ body {
           transform: scale(1);
 }
 
-.nav-bar-main .nav-bar-mobile-open:hover .nav-bar-mobile-toggler-label {
-  width: 25px;
-}
-
-.nav-bar-main .nav-bar-mobile-open:hover .nav-bar-mobile-toggler-label::after {
-  width: 25px;
-}
-
 .nav-bar-main .nav-bar-mobile-toggler-label {
   position: relative;
-  width: 20px;
+  width: 25px;
   height: 2px;
   background-color: white;
   -webkit-transition: 300ms;
@@ -208,7 +218,7 @@ body {
 
 .nav-bar-main .nav-bar-mobile-toggler-label::after {
   content: "";
-  width: 15px;
+  width: 25px;
   height: 2px;
   background-color: white;
   position: absolute;
@@ -402,7 +412,7 @@ label {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
 
