@@ -26,6 +26,17 @@ a{
 body{
     min-height: 100vh;
 }
+.nav-bar-main.fixed{
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    background-color: var(--main-dark);
+    transition: all 200ms ease-out;
+}
 .nav-bar-main{
     z-index: 100;
     display: flex;
@@ -33,8 +44,8 @@ body{
     align-items: center;
     width: 100%;
     height: 70px;
-    background-color: #252525;
     position: fixed;
+    background-color: transparent;
     .btn-desktop{
         display: none;
     }
@@ -119,7 +130,7 @@ body{
     }
     .nav-bar-mobile-open{
         z-index: 100;
-        width: 50px;
+        width: 75px;
         height: 50px;
         display: flex;
         align-items: center;
@@ -130,21 +141,10 @@ body{
     .nav-bar-mobile-toggler:checked ~ .side-menu{
         transform: scale(1);
     }
-    .nav-bar-mobile-open:hover .nav-bar-mobile-toggler-label {
-        width: 25px;
-
-
-
-    }
-    .nav-bar-mobile-open:hover .nav-bar-mobile-toggler-label::after {
-        width: 25px;
-
-
-
-    }
+  
     .nav-bar-mobile-toggler-label{
         position: relative;
-        width: 20px;
+        width: 25px;
         height: 2px;
         background-color: white;
         transition: 300ms;
@@ -159,7 +159,7 @@ body{
     }
     .nav-bar-mobile-toggler-label::after{
         content: "";
-        width: 15px;
+        width: 25px;
         height: 2px;
         background-color: white;
         position: absolute;
@@ -327,7 +327,7 @@ label{
         position: absolute;
         width: 100%;
         height:100%;
-        background-color: rgba($color: #000000, $alpha: 0.3);
+        background-color: rgba($color: #000000, $alpha: 0.5);
         z-index: 10;
     }
     .slide{
