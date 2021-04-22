@@ -57,3 +57,22 @@ window.addEventListener('scroll', function(){
   }
 
 })
+// fade on scroll
+const faders = document.querySelectorAll('.fade-in-from-bottom');
+fromBottomOptions ={
+  root: null,
+  threshold: 0.25,
+}
+const fadeInFromBottom = new IntersectionObserver(function(entries, fadeInFromBottom){
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('appear')
+      } else{
+        return;
+      }
+    });
+}, fromBottomOptions)
+faders.forEach(fader=>{
+  fadeInFromBottom.observe(fader);
+})
+  
