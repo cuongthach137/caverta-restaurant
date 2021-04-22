@@ -27,6 +27,7 @@ body{
     min-height: 100vh;
 }
 .nav-bar-main.fixed{
+    top: 0;
     z-index: 100;
     display: flex;
     justify-content: space-around;
@@ -38,13 +39,14 @@ body{
     transition: all 200ms ease-out;
 }
 .nav-bar-main{
+    top: 10px;
     z-index: 100;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 70px;
-    position: fixed;
+    position: absolute;
     background-color: transparent;
     .btn-desktop{
         display: none;
@@ -692,6 +694,16 @@ label{
             
         }
     }
+}
+.fade-in-from-bottom{
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 400ms ease-in-out;
+}
+.fade-in-from-bottom.appear{
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 400ms ease-in-out;
 }
 .parallax1{
     margin: 20px auto;
